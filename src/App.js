@@ -8,6 +8,7 @@ import { Home } from './components/Home';
 import { Members } from './components/Members';
 import { SignUp } from './components/SignUp';
 import { About } from './components/About';
+import { Reviews } from './components/Reviews';
 
 const reducer = combineReducers({ user: user.reducer });
 
@@ -27,7 +28,9 @@ export const App = () => {
               <About />
             </Route>
             <Route exact path='/Classes'></Route>
-            <Route exact path='/Reviews'></Route>
+            <Route exact path='/Reviews'>
+              <Reviews />
+            </Route>
             <Route exact path='/Members'>
               <Members />
             </Route>

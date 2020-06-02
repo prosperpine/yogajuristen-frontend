@@ -1,0 +1,29 @@
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { user, login, getLoginMessage } from '../reducers/user';
+import { moment } from 'moment';
+
+export const Reviews = () => {
+  const [reviews, setReviews] = useState([]);
+  const [myThought, setMyThought] = useState('');
+
+  useEffect(() => {
+    fetch('http://localhost:9001/reviews')
+      .then((res) => res.json())
+      .then((json) => setReviews(json));
+  }, []);
+
+  return (
+    <section>
+      {' '}
+      {reviews.map((review) => (
+        <div key={review._id}>
+          {' '}
+          <h2>{review.message}</h2>
+          {/* <h3>{moment(review.createdAt).format('YYYY-MM-DD')}</h3> */}
+        </div>
+      ))}
+    </section>
+  );
+};

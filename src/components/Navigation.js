@@ -59,11 +59,11 @@ const NavbarDropdown = styled.div`
 `;
 
 export const Navigation = () => {
-  const handleClick = (action) => {
-    if (!action) return;
+  // const handleClick = (action) => {
+  //   if (!action) return;
 
-    if (this.props.onClick) this.props.onClick(action);
-  };
+  //   if (this.props.onClick) this.props.onClick(action);
+  // };
   return (
     <Section>
       <Link to='/'>
@@ -76,7 +76,9 @@ export const Navigation = () => {
       </Link>
 
       <Page>Classes</Page>
-      <Page>Reviews</Page>
+      <Link to='/Reviews'>
+        <Page>Reviews</Page>
+      </Link>
       <Link to='/Members'>
         <Page> Members</Page>
       </Link>
