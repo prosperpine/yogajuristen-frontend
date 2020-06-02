@@ -43,7 +43,7 @@ export const user = createSlice({
 });
 
 export const login = (name, password) => {
-  const LOGIN_URL = 'http://localhost:9000/sessions';
+  const LOGIN_URL = 'http://localhost:9001/sessions';
   // const LOGIN_URL =
   return (dispatch) => {
     fetch(LOGIN_URL, {
@@ -73,13 +73,15 @@ export const login = (name, password) => {
 };
 
 export const getLoginMessage = () => {
-  const USERS_URL = 'http://localhost:9000/users';
+  const USERS_URL = 'http://localhost:9001/users';
+
   // const USERS_URL =
   return (dispatch, getState) => {
     const accessToken = getState().user.login.accessToken;
     const userId = getState().user.login.userId;
     fetch(`${USERS_URL}/${userId}`, {
       method: 'GET',
+
       headers: { Authorization: accessToken },
     })
       .then((res) => {
@@ -90,7 +92,7 @@ export const getLoginMessage = () => {
       })
       .then((json) => {
         dispatch(
-          user.actions.setLoginMessage({ loginMessage: json.stringify(json) })
+          user.actions.setLoginMessage({ loginMessage: JSON.stringify(json) })
         );
       })
       .catch((err) => {

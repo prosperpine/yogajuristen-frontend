@@ -6,6 +6,8 @@ import { user } from './reducers/user';
 import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { Members } from './components/Members';
+import { SignUp } from './components/SignUp';
+import { About } from './components/About';
 
 const reducer = combineReducers({ user: user.reducer });
 
@@ -21,11 +23,16 @@ export const App = () => {
             <Route exact path='/'>
               <Home />
             </Route>
-            <Route exact path='/About'></Route>
+            <Route exact path='/About'>
+              <About />
+            </Route>
             <Route exact path='/Classes'></Route>
             <Route exact path='/Reviews'></Route>
             <Route exact path='/Members'>
               <Members />
+            </Route>
+            <Route exact path='/Signup'>
+              <SignUp />
             </Route>
             <Route exact path='/Contact'></Route>
           </Switch>

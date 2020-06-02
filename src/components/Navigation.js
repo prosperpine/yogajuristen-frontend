@@ -70,7 +70,10 @@ export const Navigation = () => {
         <Page>Home</Page>
       </Link>
 
-      <Page>About</Page>
+      <Link to='/About'>
+        {' '}
+        <Page>About</Page>
+      </Link>
 
       <Page>Classes</Page>
       <Page>Reviews</Page>
