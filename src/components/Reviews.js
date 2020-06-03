@@ -7,6 +7,7 @@ import { moment } from 'moment';
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [myThought, setMyThought] = useState('');
+  const moment = require('moment');
 
   useEffect(() => {
     fetch('http://localhost:9001/reviews')
@@ -21,7 +22,7 @@ export const Reviews = () => {
         <div key={review._id}>
           {' '}
           <h2>{review.message}</h2>
-          {/* <h3>{moment(review.createdAt).format('YYYY-MM-DD')}</h3> */}
+          <h3>{moment(review.createdAt).format('YYYY-MM-DD')}</h3>
         </div>
       ))}
     </section>
