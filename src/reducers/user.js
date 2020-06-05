@@ -4,6 +4,7 @@ const initialState = {
   login: {
     accessToken: null,
     userId: 0,
+    userName: null,
     errorMessage: null,
     loginMessage: null,
     loggedoutMessage: null,
@@ -23,6 +24,11 @@ export const user = createSlice({
       const { userId } = action.payload;
       console.log(`User Id: ${userId}`);
       state.login.userId = userId;
+    },
+    setUserName: (state, action) => {
+      const { userName } = action.payload;
+      console.log(`username: ${userName}`);
+      state.login.userName = userName;
     },
     setErrorMessage: (state, action) => {
       const { errorMessage } = action.payload;
@@ -61,6 +67,11 @@ export const login = (name, password) => {
         dispatch(
           user.actions.setAccessToken({
             accessToken: json.accessToken,
+          })
+        );
+        dispatch(
+          user.actions.setUserName({
+            userName: json.name,
           })
         );
         dispatch(user.actions.setUserId({ userId: json.userId }));

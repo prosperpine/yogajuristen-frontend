@@ -7,14 +7,23 @@ const Section = styled.div`
 
   display: flex;
   justify-content: space-between;
-  padding: 20px 30px;
+  padding: 20px 100px;
   box-sizing: border-box;
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
 `;
 
 const Page = styled.h2`
   color: white;
   font-size: 2rem;
   font-family: 'Julius Sans One', sans-serif;
+  text-decoration: none; 
   @media (max-width: 768px) {
     display: none;
   }
@@ -66,23 +75,23 @@ export const Navigation = () => {
   // };
   return (
     <Section>
-      <Link to='/'>
-        <Page>Home</Page>
-      </Link>
+      <StyledLink to='/'>
+        <Page>Hem</Page>
+      </StyledLink>
 
-      <Link to='/About'>
+      <StyledLink to='/About'>
         {' '}
-        <Page>About</Page>
-      </Link>
+        <Page>Om mig</Page>
+      </StyledLink>
 
-      <Page>Classes</Page>
-      <Link to='/Reviews'>
-        <Page>Reviews</Page>
-      </Link>
-      <Link to='/Members'>
-        <Page> Members</Page>
-      </Link>
-      <Page>Contact</Page>
+      <Page>Klasser</Page>
+      <StyledLink to='/Reviews'>
+        <Page>Recensioner</Page>
+      </StyledLink>
+      <StyledLink to='/Members'>
+        <Page> Logga in</Page>
+      </StyledLink>
+      <Page>Kontakta</Page>
       <NavbarDropdown>
         <Hamburger>
           <Hamburgerline></Hamburgerline>
