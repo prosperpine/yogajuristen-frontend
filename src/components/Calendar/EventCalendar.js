@@ -27,12 +27,7 @@ export const EventCalendar = () => {
     <Wrapper>
       <DayPickerRangeController
         focusedInput={focusedInput}
-        // onFocusChange={handleFocusChange}
-        // startDate={startDate}
-        // endDate={endDate}
-        // onDatesChange={setDates}
         daySize={100}
-        // hideKeyboardShortcutsPanel
         renderDayContents={Day}
         isDayHighlighted={isDayHighlighted}
         enableOutsideDays

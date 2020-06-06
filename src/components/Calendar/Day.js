@@ -1,13 +1,8 @@
 import React, { memo } from 'react'
 import styled from 'styled-components'
-import { readableColor } from 'polished'
-import moment from 'moment'
 import flow from 'lodash/fp/flow'
 import filter from 'lodash/fp/filter'
 import sortBy from 'lodash/fp/sortBy'
-import find from 'lodash/fp/find'
-import takeRight from 'lodash/fp/takeRight'
-import map from 'lodash/fp/map'
 import last from 'lodash/fp/last'
 import { memoize } from 'lodash'
 
