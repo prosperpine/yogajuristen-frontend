@@ -29,22 +29,20 @@ const HeroText = styled.div`
 
 const Title = styled.h2`
   font-family: Roboto, sans-serif;
-  font-size: 3rem;
+  font-size: 4rem;
   color: #303e27;
 `
 
 
-const HeroButton = styled.button`
-  border: none;
-  outline: 0;
+const HeroButton = styled.div`
+  border: solid 2px #303e27;
+  border-radius: 10px;
   display: inline-block;
-  padding: 10px 25px;
-  color: black;
-  background-color: #ddd;
+  padding: 20px 50px;
   text-align: center;
   cursor: pointer;
   &:hover {
-  background-color: #555;
+  background-color: #303e27;
   color: white;
   }
 `

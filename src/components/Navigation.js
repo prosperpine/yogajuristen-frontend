@@ -83,8 +83,8 @@ export const Navigation = () => {
         {' '}
         <Page>Om mig</Page>
       </StyledLink>
+      <StyledLink to='/Classes'> <Page>Klasser</Page></StyledLink>
 
-      <Page>Klasser</Page>
       <StyledLink to='/Reviews'>
         <Page>Recensioner</Page>
       </StyledLink>
