@@ -60,8 +60,9 @@ export const login = (name, password) => {
       .then((res) => {
         if (res.ok) {
           return res.json();
+        } else {
+          return res.text().then((json) => { throw new Error(json) })
         }
-        throw 'Please, try again';
       })
       .then((json) => {
         dispatch(
@@ -75,6 +76,7 @@ export const login = (name, password) => {
             userName: name
           })
         );
+        dispatch(user.actions.setErrorMessage({ errorMessage: json.message }))
       })
       .catch((err) => {
         dispatch(user.actions.logout());

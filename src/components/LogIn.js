@@ -16,10 +16,13 @@ export const LogIn = () => {
   const logInMessage = useSelector(
     (store) => store.user.login.loggedoutMessage
   );
+  const errorMessage = useSelector(
+    (store) => store.user.login.errorMessage
+  );
   const [name, setName] = useState('');
   //const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+
   const [showSummary, setShowSummary] = useState(false);
 
   const handleLogin = (event) => {
@@ -63,14 +66,14 @@ export const LogIn = () => {
           </form>
         )}
 
-        {errorMessage && <h1>{errorMessage}</h1>}
+
         <p>
           Are you not a member yet? Please{' '}
           <Link to='/Signup'>
             <p>sign up!</p>
           </Link>
         </p>
-
+        {errorMessage && <h4>Error Message : {`${errorMessage}`}</h4>}
         {loggedoutMessage && <h4>you are now logged out!</h4>}
       </div>
     );
