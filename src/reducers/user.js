@@ -4,7 +4,7 @@ const initialState = {
   login: {
     accessToken: null,
     userId: 0,
-    userName: null,
+    userName: '',
     errorMessage: null,
     loginMessage: null,
     loggedoutMessage: null,
@@ -66,15 +66,15 @@ export const login = (name, password) => {
       .then((json) => {
         dispatch(
           user.actions.setAccessToken({
-            accessToken: json.accessToken,
-          })
-        );
-        dispatch(
-          user.actions.setUserName({
-            userName: json.name,
+            accessToken: json.accessToken
           })
         );
         dispatch(user.actions.setUserId({ userId: json.userId }));
+        dispatch(
+          user.actions.setUserName({
+            userName: name
+          })
+        );
       })
       .catch((err) => {
         dispatch(user.actions.logout());

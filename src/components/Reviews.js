@@ -7,7 +7,7 @@ import { ReviewInput } from './ReviewInput';
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [userReview, setUserReview] = useState('');
-  const name = useSelector((store) => store.user.name);
+  const name = useSelector((store) => store.user.login.userName);
 
   const moment = require('moment');
 

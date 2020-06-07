@@ -17,7 +17,7 @@ export const LogIn = () => {
     (store) => store.user.login.loggedoutMessage
   );
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  //const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [showSummary, setShowSummary] = useState(false);
@@ -40,7 +40,7 @@ export const LogIn = () => {
                 required
               />
             </label>
-            <label>
+            {/* <label>
               email
               <input
                 type='email'
@@ -48,7 +48,7 @@ export const LogIn = () => {
                 onChange={(event) => setEmail(event.target.value)}
                 required
               />
-            </label>
+            </label> */}
             <label>
               password
               <input

@@ -13,6 +13,7 @@ const USERS_URL = 'http://localhost:9001/users';
 export const MembersPage = () => {
   const dispatch = useDispatch();
   const accessToken = useSelector((store) => store.user.login.accessToken);
+  const userName = useSelector((store) => store.user.login.userName);
   const userId = useSelector((store) => store.user.login.userId);
   const errorMessage = useSelector((store) => store.user.login.errorMessage);
   const loginMessage = useSelector((store) => store.user.login.loginMessage);
@@ -27,7 +28,7 @@ export const MembersPage = () => {
       <div>
         {errorMessage && <h4>Error Message : {`${errorMessage}`}</h4>}
         {loginMessage && <h4>Secret Message : {`${loginMessage}`}</h4>}
-        <p>You are logged in now, {user.name}</p>
+        <p>You are logged in now, {userName}</p>
         <p>{loginMessage}</p>
         <button type='submit' onClick={(e) => dispatch(logout())}>
           LOGGING OUT

@@ -23,27 +23,30 @@ export const ReviewInput = ({ setReviews }) => {
         setUserReview(''); // will empty the textarea when the form is submitted
       });
   };
+  if (!accessToken) {
+    return <p>Log in to leave a review</p>
+  } else {
+    return (
+      <form onSubmit={handleReviewSubmit}>
+        <div>
+          <label>
+            <p>leave a review</p>
+            <textarea
+              onChange={(event) => setUserReview(event.target.value)}
+              value={userReview}
+            />
 
-  return (
-    <form onSubmit={handleReviewSubmit}>
-      <div>
-        <label>
-          <p>leave a review</p>
-          <textarea
-            onChange={(event) => setUserReview(event.target.value)}
-            value={userReview}
-          />
-
-          <button
-            disabled={
-              userReview.length < 6 || userReview.length > 140 ? true : false
-            }
-            type='submit'
-          >
-            SUBMIT
+            <button
+              // disabled={
+              //   userReview.length < 6 || userReview.length > 140 ? true : false
+              // }
+              type='submit'
+            >
+              SUBMIT
           </button>
-        </label>
-      </div>
-    </form>
-  );
+          </label>
+        </div>
+      </form>
+    );
+  }
 };
