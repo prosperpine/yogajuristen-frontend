@@ -4,8 +4,6 @@ import { Navigation } from './Navigation.js';
 
 const Section = styled.main`
   background-color: #b4bb72;
-  box-sizing: border-box;
-  
   margin-top: 0;
 `;
 
@@ -14,10 +12,16 @@ const Title = styled.h1`
   margin: 0;
   font-weight: 400;
   color: white;
-  font-size: 5rem;
+  font-size: 2.6rem;
   text-align: center;
   padding-top: 60px;
   padding-bottom: 20px;
+  @media (min-width: 667px) and (max-width: 1024px){
+    font-size: 3.8rem;
+  }
+  @media (min-width: 1025px) {
+    font-size: 5rem;
+  }
 `;
 
 export const Header = () => {

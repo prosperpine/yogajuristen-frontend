@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { user, login, getLoginMessage } from '../reducers/user';
+
 import { ReviewInput } from './ReviewInput';
 
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
-  const [userReview, setUserReview] = useState('');
-  const name = useSelector((store) => store.user.login.userName);
 
   const moment = require('moment');
 
@@ -28,7 +26,7 @@ export const Reviews = () => {
           {' '}
           <h2>{review.message}</h2>
           <h3>{moment(review.createdAt).format('YYYY-MM-DD')}</h3>
-          <p>{name}</p>
+          <p>{review.reviewer}</p>
         </div>
       ))}
     </section>

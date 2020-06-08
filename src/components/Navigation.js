@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 const Section = styled.div`
   width: 100%;
-
   display: flex;
   justify-content: space-between;
-  padding: 20px 100px;
-  box-sizing: border-box;
+  padding: 30px;
+  @media(min-width:667px){ 
+   padding: 30px 100px;
+}
+ 
 `;
 
 const StyledLink = styled(Link)`
@@ -21,51 +25,24 @@ const StyledLink = styled(Link)`
 
 const Page = styled.h2`
   color: white;
-  font-size: 2rem;
   font-family: 'Julius Sans One', sans-serif;
   text-decoration: none; 
-  @media (max-width: 768px) {
-    display: none;
+  display: none;
+  @media (min-width: 667px) {
+    display: flex; 
+    font-size: 1rem;
+  }
+  @media (min-width: 900px) {
+    font-size: 1.4rem;
+    
   }
 `;
 
 const Hamburger = styled.div`
-  width: 30px;
-  height: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 26px;
-`;
-
-const Hamburgerline = styled.div`
-  width: 30px;
-  height: 4px;
-  background-color: #fff;
-  border-radius: 5px;
-`;
-
-const NavbarDropdownContent = styled.div`
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 2);
-  padding: 12px 16px;
-  z-index: 1;
-`;
-
-const NavbarDropdown = styled.div`
-  position: relative;
-  display: inline-block;
-  &:hover ${NavbarDropdownContent} {
-    display: inline-block;
-    padding: 10px;
-  }
-  @media (min-width: 768px) {
+  @media(min-width:667px){ 
     display: none;
-  }
-`;
+}
+`
 
 export const Navigation = () => {
   // const handleClick = (action) => {
@@ -92,7 +69,7 @@ export const Navigation = () => {
         <Page> Logga in</Page>
       </StyledLink>
       <Page>Kontakta</Page>
-      <NavbarDropdown>
+      {/* <NavbarDropdown>
         <Hamburger>
           <Hamburgerline></Hamburgerline>
           <Hamburgerline></Hamburgerline>
@@ -103,7 +80,14 @@ export const Navigation = () => {
           <a to='/'>Dropdown here</a>
           <a to='/'>Dropdown here</a>
         </NavbarDropdownContent>
-      </NavbarDropdown>
+      </NavbarDropdown> */}
+      <Hamburger>
+        <FontAwesomeIcon icon={faBars} color="white" size="2x" />
+      </Hamburger>
+
+
+
+
     </Section>
   );
 };

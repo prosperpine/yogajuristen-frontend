@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { user } from 'reducers/user';
 
 export const ReviewInput = ({ setReviews }) => {
   const [userReview, setUserReview] = useState('');
   const accessToken = useSelector((store) => store.user.login.accessToken);
+  const userName = useSelector((store) => store.user.login.userName);
 
   const handleReviewSubmit = (event) => {
     event.preventDefault();
@@ -15,7 +17,7 @@ export const ReviewInput = ({ setReviews }) => {
         'Content-Type': 'application/json',
       },
 
-      body: JSON.stringify({ message: userReview }),
+      body: JSON.stringify({ message: userReview, reviewer: userName })
     })
       .then((res) => res.json())
       .then((newReview) => {
