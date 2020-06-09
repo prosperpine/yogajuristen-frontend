@@ -3,24 +3,30 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { HamburgerIcon } from './HamburgerIcon'
 
 const Section = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 30px;
-  @media(min-width:667px){ 
-   padding: 30px 100px;
+
+  @media(min-width: 667px) and (max-width: 1024px){ 
+    padding: 30px }
+
+  @media(min-width: 1025px){
+    padding: 30px 80px;
+  
 }
  
 `;
 
 const StyledLink = styled(Link)`
-    text-decoration: none;
+  text-decoration: none;
 
-    &:focus, &:hover, &:visited, &:link, &:active {
-        text-decoration: none;
-    }
+  &:focus, &:hover, &:visited, &:link, &:active {
+    text-decoration: none;
+  }
 `;
 
 const Page = styled.h2`
@@ -50,8 +56,10 @@ export const Navigation = () => {
 
   //   if (this.props.onClick) this.props.onClick(action);
   // };
+
+
   return (
-    <Section>
+    <Section id="myTopnav">
       <StyledLink to='/'>
         <Page>Hem</Page>
       </StyledLink>
@@ -60,8 +68,8 @@ export const Navigation = () => {
         {' '}
         <Page>Om mig</Page>
       </StyledLink>
-      <StyledLink to='/Classes'> <Page>Klasser</Page></StyledLink>
-
+      <StyledLink to='/Classes'>
+        <Page>Klasser</Page></StyledLink>
       <StyledLink to='/Reviews'>
         <Page>Recensioner</Page>
       </StyledLink>
@@ -69,21 +77,9 @@ export const Navigation = () => {
         <Page> Logga in</Page>
       </StyledLink>
       <Page>Kontakta</Page>
-      {/* <NavbarDropdown>
-        <Hamburger>
-          <Hamburgerline></Hamburgerline>
-          <Hamburgerline></Hamburgerline>
-          <Hamburgerline></Hamburgerline>
-        </Hamburger>{' '}
-        <NavbarDropdownContent>
-          <a to='/'>Dropdown here</a>
-          <a to='/'>Dropdown here</a>
-          <a to='/'>Dropdown here</a>
-        </NavbarDropdownContent>
-      </NavbarDropdown> */}
-      <Hamburger>
-        <FontAwesomeIcon icon={faBars} color="white" size="2x" />
-      </Hamburger>
+      <HamburgerIcon />
+
+
 
 
 

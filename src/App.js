@@ -17,11 +17,16 @@ const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
   margin: 0;
+  overflow-x: hidden;
+  
 
 }
 
 body {
   padding: 0;
+  margin: 0;
+ 
+  
  
 }
 `
