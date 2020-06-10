@@ -6,7 +6,7 @@ import { LogIn } from './LogIn';
 import { SignUp } from './SignUp';
 import { MembersPage } from './MembersPage';
 
-export const Members = () => {
+export const MembersLogin = () => {
   const dispatch = useDispatch();
 
   const accessToken = useSelector((store) => store.user.login.accessToken);

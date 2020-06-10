@@ -105,7 +105,7 @@ export const ReviewInput = ({ setReviews }) => {
             type='submit'
           >
             + </Button>
-          ) : (<StyledLink to="/Members">Logga in först.</StyledLink>)}
+          ) : (<StyledLink to="/LogIn">Logga in först > </StyledLink>)}
           </ButtonContainer>
         </Form>
       </Input>

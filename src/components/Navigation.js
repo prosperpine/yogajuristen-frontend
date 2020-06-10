@@ -18,14 +18,27 @@ const Section = styled.div`
     padding: 30px 80px;
   
 }
- 
 `;
+
+const LogInLink = styled(Link)`
+  position: fixed;
+  top: 15px;
+  left: 20px;
+ 
+  color: white;
+  font-weight: bold; 
+  font-size: 1.4rem;
+  text-decoration: none;
+    &:hover {
+      color: #303e27;}
+  
+`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  &:hover {
+    color: #303e27;}
 
-  &:focus, &:hover, &:visited, &:link, &:active {
-    text-decoration: none;
   }
 `;
 
@@ -39,16 +52,10 @@ const Page = styled.h2`
     font-size: 1rem;
   }
   @media (min-width: 900px) {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     
   }
 `;
-
-const Hamburger = styled.div`
-  @media(min-width:667px){ 
-    display: none;
-}
-`
 
 export const Navigation = () => {
   // const handleClick = (action) => {
@@ -74,16 +81,11 @@ export const Navigation = () => {
         <Page>Recensioner</Page>
       </StyledLink>
       <StyledLink to='/Members'>
-        <Page> Logga in</Page>
+        <Page>Medlemmar</Page>
       </StyledLink>
       <Page>Kontakta</Page>
+      <LogInLink to='/LogIn'>Logga in</LogInLink>
       <HamburgerIcon />
-
-
-
-
-
-
     </Section>
   );
 };
