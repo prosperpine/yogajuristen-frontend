@@ -7,7 +7,7 @@ import eventsData from './events'
 import moment from 'moment'
 
 const Wrapper = styled.div`
-  position: static;
+ 
   .CalendarDay__highlighted_calendar {
     background: #f7f8f6 !important;
   }
