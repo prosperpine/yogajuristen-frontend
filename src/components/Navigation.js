@@ -36,10 +36,9 @@ const LogInLink = styled(Link)`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  &:hover {
-    color: #303e27;}
+  
 
-  }
+  
 `;
 
 const Page = styled.h2`
@@ -47,7 +46,9 @@ const Page = styled.h2`
   font-family: 'Julius Sans One', sans-serif;
   text-decoration: none; 
   display: none;
-  @media (min-width: 667px) {
+  &:hover {
+    color: #303e27;}
+  @media (min-width: 700px) {
     display: flex; 
     font-size: 1rem;
   }
