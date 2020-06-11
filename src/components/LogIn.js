@@ -16,61 +16,98 @@ const Cards = styled.section`
   font-family: 'Barlow', sans-serif;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(${mountains});
   background-size: cover;
-  margin-bottom: 40px; 
+ 
 `
-const LogInCard = styled.form`
+const LogInCard = styled.div`
+overflow-x: visible; 
+display: flex;
+flex-direction: column; 
+ align-items: center;
+background-color: rgba(256,256,256,0.8);
+border-radius: 16px;
+width: 70%;
+padding: 40px; 
+  margin: 40px; 
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+@media(min-width: 668px){
+  flex-direction: column; 
+  width: 70%;   
+}
+@media(min-width: 1024px){
+  width: 60%;
+  flex-direction: column; 
+}
+`
+const SignUpCard = styled.form`
 display: flex;
  align-items: center;
 flex-direction: column; 
 justify-content: space-between;
-border-radius: 16px; 
-background-color: white;
-width: 70%
-height: 30%;
-margin: 50px;
-padding: 20px; 
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-font-size: 1.8rem;
-@media(min-width: 668px) {
-  flex-direction: row; 
-  width: 80%; 
-  height: 20%; 
-}
-  
-   
-`
-const SignUpCard = styled.form`
-display: flex;
+overflow-x: visible; 
+background-color: rgba(0,0,0,0.2);
+width: 70%;
+border-radius: 16px;
+padding: 40px; 
+margin: 40px;
 
-border: 2px solid white; 
-border-radius: 16px; 
-background-color: white;
-width: 50%; 
-height: 20%;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+@media(min-width: 668px)and(max-width: 1024px){
+  flex-direction: row; 
+  width: 70%;    
+}
+@media(min-width: 1024px){
+  
+  
+ 
+}
     
 `
 const Label = styled.label`
-display: flex; 
-flex-direction: column; 
+
+
 `
 const Text = styled.p`
-margin-bottom: 16px;
+font-size: 1.4rem;
+color: white; 
+@media(min-width: 668px) {
+font-size: 1.8rem;
+}
 `
 const Input = styled.input`
   padding: 0.5em;
-  height: 3rem;
+  height: 3rem; 
   font-size: 1rem; 
   color:  darkblue;
-  background: #f6faf7;
+  background: #ebedf9;
   border: none;
-  border-radius: 3px;
-  margin-bottom: 16px;
+  border-radius: 10px;
+  margin: 16px; 
+  
   @media(min-width: 668px) {
     font-size: 1.2rem;
+   
   }
     
 `;
+
+const Button = styled.button`
+  padding: 0.5em;
+  height: 3rem;
+  font-size: 1rem; 
+  color:  grey; 
+  background: #ebedf9;
+  border: lightgrey;
+  border-radius: 10px;
+  &:hover {
+    background: #b4bb72;
+    color: white; 
+  }
+  @media(min-width: 668px) {
+    font-size: 1.2rem;
+  }
+`
+
 
 
 // const URL = 'http://localhost:8080/users';
@@ -102,33 +139,41 @@ export const LogIn = () => {
       <section>
         {!showSummary && (
           <Cards>
-            <LogInCard onSubmit={handleLogin}>
+            <LogInCard>
+              <form onSubmit={handleLogin}>
 
-              <Label>
-                <Text>Namn</Text>
-                <Input
-                  value={name}
-                  onChange={(event) => setName(event.target.value)}
-                  required
-                />
-              </Label>
-              <Label>
-                <Text> Lösenord</Text>
-                <Input
-                  type='password'
-                  value={password}
-                  required
-                  onChange={(event) => setPassword(event.target.value)}
-                />
-              </Label>
+                <Label>
 
-              <button type='submit'>LOG IN</button>
+                  <Input
+                    placeholder="Logga in med ditt namn"
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                    required
+                  />
+                </Label>
+                <Label>
+
+                  <Input
+                    placeholder="Lösenord"
+                    type='password'
+                    value={password}
+                    required
+                    onChange={(event) => setPassword(event.target.value)}
+                  />
+                </Label>
+
+                <Button type='submit'>Logga in</Button>
+              </form>
             </LogInCard>
-
-            <SignUpCard> <p>
-              Are you not a member yet? Please{' '}
+            <SignUpCard>
+              <Text>Bli medlem på Yogajuristen!<br></br>
+            Som medlem får du bland annat tillgång till separata filmklipp av
+            yogasekvenser, meditation, andning, motivation osv. Som
+            medlem kommer du även få del av olika erbjudanden från tid till
+            tid.
+              </Text>
               <SignUp />
-            </p></SignUpCard>
+            </SignUpCard>
           </Cards>
         )}
 

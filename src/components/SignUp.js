@@ -6,6 +6,44 @@ import { user, login } from '../reducers/user';
 
 const URL = 'http://localhost:9001/users';
 
+const Input = styled.input`
+  padding: 0.5em;
+  height: 3rem;
+  font-size: 1rem; 
+  color:  darkblue;
+  background: #ebedf9;
+  border: none;
+  border-radius: 10px;
+  margin: 16px; 
+  @media(min-width: 668px) {
+    font-size: 1.2rem;
+   
+  }
+    
+`;
+
+const Button = styled.button`
+  padding: 0.5em;
+  height: 3rem;
+  font-size: 1rem; 
+  color:  grey; 
+  background: #ebedf9;
+  
+  border-radius: 10px;
+  &:hover {
+    background: #b4bb72;
+    color: white; 
+    
+  }
+   
+  @media(min-width: 668px) {
+    font-size: 1.2rem;
+   
+
+  }
+`
+
+
 export const SignUp = () => {
   const dispatch = useDispatch();
   const accessToken = useSelector((store) => store.user.login.accessToken);
@@ -54,16 +92,18 @@ export const SignUp = () => {
       {!showSummary && (
         <form onSubmit={(e) => dispatch(handleSignup(e))}>
           <label>
-            username
-            <input
+
+            <Input
+              placeholder="Namn"
               value={name}
               onChange={(event) => setName(event.target.value)}
               required
             />
           </label>
           <label>
-            email
-            <input
+
+            <Input
+              placeholder="Email"
               type='email'
               value={email}
               onChange={(event) => setEmail(event.target.value)}
@@ -71,15 +111,16 @@ export const SignUp = () => {
             />
           </label>
           <label>
-            password
-            <input
+
+            <Input
+              placeholder="Lösenord"
               type='password'
               value={password}
               required
               onChange={(event) => setPassword(event.target.value)}
             />
           </label>
-          <button type='submit'>SIGN UP</button>
+          <Button type='submit'>Registrera</Button>
         </form>
       )}
       {showSummary && (
