@@ -43,6 +43,9 @@ const Button = styled.button`
   }
 `
 
+const Error = styled.h4`
+color: white; 
+`
 
 export const SignUp = () => {
   const dispatch = useDispatch();
@@ -81,7 +84,7 @@ export const SignUp = () => {
         })
 
         .catch((err) => {
-          setErrorMessage('error:Username/email is already registered.', err);
+          setErrorMessage('Username/email is already registered.', err);
           dispatch(user.actions.setErrorMessage({ errorMessage: err }));
         });
     };
@@ -121,6 +124,7 @@ export const SignUp = () => {
             />
           </label>
           <Button type='submit'>Registrera</Button>
+          {errorMessage && <Error>{errorMessage}</Error>}
         </form>
       )}
       {showSummary && (
@@ -130,7 +134,7 @@ export const SignUp = () => {
           </p>
         </div>
       )}
-      {errorMessage && <h1>{errorMessage}</h1>}
+
     </div>
   );
 };

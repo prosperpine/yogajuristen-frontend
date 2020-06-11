@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../reducers/user';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { HamburgerIcon } from './HamburgerIcon'
@@ -36,9 +38,6 @@ const LogInLink = styled(Link)`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  
-
-  
 `;
 
 const Page = styled.h2`
@@ -59,15 +58,13 @@ const Page = styled.h2`
 `;
 
 export const Navigation = () => {
-  // const handleClick = (action) => {
-  //   if (!action) return;
+  const accessToken = useSelector((store) => store.user.login.accessToken);
+  const dispatch = useDispatch();
 
-  //   if (this.props.onClick) this.props.onClick(action);
-  // };
 
 
   return (
-    <Section id="myTopnav">
+    < Section id="myTopnav" >
       <StyledLink to='/'>
         <Page>Hem</Page>
       </StyledLink>
@@ -85,8 +82,9 @@ export const Navigation = () => {
         <Page>Medlemmar</Page>
       </StyledLink>
       <Page>Kontakta</Page>
-      <LogInLink to='/LogIn'>Logga in</LogInLink>
+      {accessToken ? (<LogInLink to='/' onClick={(e) => dispatch(logout())}>Logga ut</LogInLink>) : (<LogInLink to='/LogIn'>Logga in</LogInLink>)}
       <HamburgerIcon />
-    </Section>
+    </Section >
   );
-};
+}
+

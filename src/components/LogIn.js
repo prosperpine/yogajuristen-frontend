@@ -44,29 +44,18 @@ display: flex;
 flex-direction: column; 
 justify-content: space-between;
 overflow-x: visible; 
-background-color: rgba(0,0,0,0.2);
+background-color: rgba(0,0,0,0.4);
 width: 70%;
 border-radius: 16px;
 padding: 40px; 
 margin: 40px;
-
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 @media(min-width: 668px)and(max-width: 1024px){
-  flex-direction: row; 
-  width: 70%;    
-}
-@media(min-width: 1024px){
-  
-  
- 
-}
-    
+  flex-direction: row;    
+}    
 `
-const Label = styled.label`
 
-
-`
 const Text = styled.p`
 font-size: 1.4rem;
 color: white; 
@@ -107,6 +96,9 @@ const Button = styled.button`
     font-size: 1.2rem;
   }
 `
+const Error = styled.h4`
+color: black;
+`
 
 
 
@@ -141,8 +133,7 @@ export const LogIn = () => {
           <Cards>
             <LogInCard>
               <form onSubmit={handleLogin}>
-
-                <Label>
+                <label>
 
                   <Input
                     placeholder="Logga in med ditt namn"
@@ -150,8 +141,8 @@ export const LogIn = () => {
                     onChange={(event) => setName(event.target.value)}
                     required
                   />
-                </Label>
-                <Label>
+                </label>
+                <label>
 
                   <Input
                     placeholder="Lösenord"
@@ -160,10 +151,11 @@ export const LogIn = () => {
                     required
                     onChange={(event) => setPassword(event.target.value)}
                   />
-                </Label>
+                </label>
 
                 <Button type='submit'>Logga in</Button>
               </form>
+              {errorMessage && <Error>{`${errorMessage}`}</Error>}
             </LogInCard>
             <SignUpCard>
               <Text>Bli medlem på Yogajuristen!<br></br>
@@ -179,7 +171,7 @@ export const LogIn = () => {
 
 
 
-        {errorMessage && <h4>Error Message : {`${errorMessage}`}</h4>}
+
         {loggedoutMessage && <h4>you are now logged out!</h4>}
       </section>
     );
