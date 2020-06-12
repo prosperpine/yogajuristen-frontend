@@ -7,24 +7,26 @@ import 'react-dates/initialize'
 import 'react-dates/lib/css/_datepicker.css'
 
 const Section = styled.section`
+
   display: flex; 
- 
-  height: 100vh; 
-  align-items: center; 
-  flex-direction: column;
+  justify-content:center; 
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(${yogamat});
+ align-items: center; 
+
   color: #5e5e5e; 
   font-family: 'Barlow', sans-serif;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(${yogamat});
+  
   background-size: cover;
 `
 export const Classes = () => {
   return (
-    <Section>
+    <main>
+      <Section>
 
-      <ThemeClasses />
-
-
+        <ThemeClasses />
+      </Section>
       <QnA />
-    </Section>
+    </main>
   )
 }
+// background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(${yogamat});

@@ -10,9 +10,10 @@ import { HamburgerIcon } from './HamburgerIcon'
 const Section = styled.div`
   width: 100%;
   display: flex;
+ 
   justify-content: space-between;
   padding: 30px;
-
+  
   @media(min-width: 667px) and (max-width: 1024px){ 
     padding: 30px }
 

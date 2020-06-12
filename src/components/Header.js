@@ -8,6 +8,7 @@ const Section = styled.main`
   font-family: 'Julius Sans One',sans-serif;
   background-color: #b4bb72;
   margin-top: 0;
+  overflow-hidden: visible;
 `;
 
 

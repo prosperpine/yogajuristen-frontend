@@ -4,17 +4,25 @@ import { QnA } from './QnA'
 import { EventCalendar } from './Calendar/EventCalendar';
 import styled from 'styled-components';
 
-const Section = styled.section`
-overflow-x: visible; 
 
+
+const Wrapper = styled.div`
+overflow-x: visible; 
+background-color: rgba(256,256,256,0.8);
+border-radius: 16px;
+justify-content: center; 
+width: 80%;
+padding: 26px;
+margin: 20px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 display: flex;
 flex-direction: column; 
 align-items: center;
 @media(min-width: 900px){  
- justify-content: center; 
+justify-content: left;
 flex-direction: row;
 flex-wrap: wrap;
-}
+
 `
 
 const ClassCard = styled.div`
@@ -24,7 +32,7 @@ border-radius: 16px;
 width: 80%;
 padding: 26px;
 margin: 20px 0;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 @media(min-width: 900px){  
   width: 46%;
   margin: 30px 24px; 
@@ -53,18 +61,18 @@ margin-top: 16px;
 padding: 7px 0;`
 
 const Button = styled.a`
-width: 40%;
-
+width: 80%;
 border-radius: 5px;
 padding: 16px; 
 text-align: center;
 margin: 20px 0;
 border: 2px solid white; 
-background-color: none;
+background-color: #b4bb72; 
 font-family: 'Barlow', sans-serif;
 font-size: 1.8rem;
 text-decoration: none; 
 color: white; 
+
 @media(min-width: 900px){  
   width: 40%;
   margin: 30px 24px; 
@@ -79,7 +87,8 @@ color: white;
 
 export const ThemeClasses = () => {
   return (
-    <Section>
+
+    <Wrapper>
       <ClassCard>
         <h2>TEMAKLASSER</h2>
         <Text>
@@ -100,14 +109,14 @@ export const ThemeClasses = () => {
         <Dates>7 november (höftöppnare)</Dates>
         <Dates>12 december (pranayama & meditation)</Dates>
       </ClassCard>
-      <DetailsCard>
-        <h2>Tid och pris:</h2>
+      <ClassCard>      <h2>Tid och pris:</h2>
         <Text><span style={{ fontWeight: "bold" }}>Tid: </span> 10:00 - 12:30</Text>
         <Text><span style={{ fontWeight: "bold" }}>Pris: </span> 290 kr/gång eller 1120 kr för samtliga</Text>
         <Text><span style={{ fontWeight: "bold" }}>Förkunskaper: </span> Inga.</Text>
-      </DetailsCard>
+      </ClassCard>
       <Button href="https://www.timecenter.se/yogaheart/boka/">Boka</Button>
 
-    </Section>
+    </Wrapper>
+
   )
 }
