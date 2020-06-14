@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useDispatch, useSelector } from 'react-redux';
-import { user, login, logout } from '../reducers/user';
-import { LogIn } from './LogIn';
-import { SignUp } from './SignUp';
-import { MembersPage } from './MembersPage';
+import lake from '../images/lake.jpg'
+import { ThemeClasses } from './ThemeClasses';
+
+const Section = styled.section`
+background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(${lake});
+height: 100vh; 
+background-size: cover;
+
+
+
+`
+
+
 
 export const About = () => {
-  return <MembersPage />;
+  return (
+    <Section>
+      HEllO
+    </Section>
+  )
 };

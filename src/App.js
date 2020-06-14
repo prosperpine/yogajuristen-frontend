@@ -13,6 +13,7 @@ import { SignUp } from './components/SignUp';
 import { About } from './components/About';
 import { Reviews } from './components/Reviews';
 import { Classes } from './components/Classes'
+import { Contact } from './components/Contact'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -67,7 +68,9 @@ export const App = () => {
             <Route exact path='/Members'>
               <MembersPage />
             </Route>
-            <Route exact path='/Contact'></Route>
+            <Route exact path='/Contact'>
+              <Contact />
+            </Route>
           </Switch>
         </BrowserRouter>
       </main>

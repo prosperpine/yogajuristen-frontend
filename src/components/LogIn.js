@@ -112,7 +112,7 @@ export const LogIn = () => {
     (store) => store.user.login.loggedoutMessage
   );
   const logInMessage = useSelector(
-    (store) => store.user.login.loggedoutMessage
+    (store) => store.user.login.loginMessage
   );
   const errorMessage = useSelector(
     (store) => store.user.login.errorMessage

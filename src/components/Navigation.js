@@ -82,7 +82,8 @@ export const Navigation = () => {
       <StyledLink to='/Members'>
         <Page>Medlemmar</Page>
       </StyledLink>
-      <Page>Kontakta</Page>
+      <StyledLink to='/Contact'><Page>Kontakta</Page></StyledLink>
+
       {accessToken ? (<LogInLink to='/' onClick={(e) => dispatch(logout())}>Logga ut</LogInLink>) : (<LogInLink to='/LogIn'>Logga in</LogInLink>)}
       <HamburgerIcon />
     </Section >
