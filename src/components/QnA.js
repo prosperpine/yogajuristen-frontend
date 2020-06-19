@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import styled, { css } from "styled-components";
 import GlobalStyle from "./global-style";
+import { qnaData, AccordionItems } from "./QnAData"
 
 const Container = styled.main`
   position: relative;
@@ -8,12 +9,13 @@ const Container = styled.main`
 
 const Section = styled.section`
   position: relative;
+  display: flex;
+    justify-content: center;
 `;
 
 const InnerSection = styled.div`
   position: relative;
-  max-width: 500px;
-  padding: 2rem;
+  max-width: 80%;
 `;
 
 const AccordionContainer = styled.div``;
@@ -21,95 +23,9 @@ const AccordionContainer = styled.div``;
 const AccordionInner = styled.div`
   position: relative;
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid lightgrey;
   border-radius: 4px;
 `;
-
-const AccordionItem = styled.div`
-  &:not(:last-child) {
-    border-bottom: 1px solid black;
-  }
-`;
-
-const AccordionTitle = styled.h3`
-  margin: 0;
-  padding: 1rem;
-  cursor: pointer;
-`;
-
-const AccordionBody = styled.div`
-  display: block;
-  position: relative;
-  padding: 0;
-  margin: 0;
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s;
-
-  ${({ active, bodyHeight }) =>
-    active &&
-    css`
-      height: ${bodyHeight}px;
-    `}
-`;
-
-const AccordionContent = styled.p`
-  margin: 0;
-  padding: 0 1rem 1rem;
-  height: auto;
-`;
-
-const qnaData = [
-  {
-    title: "Fråga 1",
-    content:
-      "Ocean insofar hope against deceptions passion war transvaluation play intentions contradict inexpedient ocean. Decrepit society deceptions chaos noble joy convictions dead eternal-return free philosophy right mountains. "
-  },
-  {
-    title: "Fråga 2",
-    content:
-      "Ocean insofar hope against deceptions passion war transvaluation play intentions contradict inexpedient ocean. Decrepit society deceptions chaos noble joy convictions dead eternal-return free philosophy right mountains. "
-  },
-  {
-    title: "Fråga 3",
-    content:
-      "Ocean insofar hope against deceptions passion war transvaluation play intentions contradict inexpedient ocean. Decrepit society deceptions chaos noble joy convictions dead eternal-return free philosophy right mountains. "
-  },
-  {
-    title: "Fråga 4",
-    content: "Ocean insofar hope against deceptions passion war transvaluation play intentions contradict inexpedient ocean. Decrepit society deceptions chaos noble joy convictions dead eternal-return free philosophy right mountains. "
-  },
-  {
-    title: "Fråga 5",
-    content:
-      "Ocean insofar hope against deceptions passion war transvaluation play intentions contradict inexpedient ocean. Decrepit society deceptions chaos noble joy convictions dead eternal-return free philosophy right mountains. "
-  }
-];
-
-const AccordionItems = ({
-  accordionContent,
-  refs,
-  currentAccordion,
-  setCurrentAccordion,
-  setBodyHeight,
-  bodyHeight
-}) =>
-  accordionContent.map(({ title, content }, i) => (
-    <AccordionItem key={`accordion-item-${i}`}>
-      <AccordionTitle
-        onClick={() => {
-          setCurrentAccordion(i);
-          setBodyHeight(refs[i].current.clientHeight);
-          console.log(refs[i].current.clientHeight);
-        }}
-      >
-        {title}
-      </AccordionTitle>
-      <AccordionBody active={currentAccordion === i} bodyHeight={bodyHeight}>
-        <AccordionContent ref={refs[i]}>{content}</AccordionContent>
-      </AccordionBody>
-    </AccordionItem>
-  ));
 
 export const QnA = () => {
   const [currentAccordion, setCurrentAccordion] = useState(0);

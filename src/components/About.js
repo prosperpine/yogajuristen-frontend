@@ -40,9 +40,10 @@ margin-bottom: 24px;
   padding: 0 30px; 
 }
 `
-const Title = styled.h2`
+const Title = styled.h1`
 font-family: 'Julius Sans One', sans-serif;
 color: #303e27;
+font-size: 2.4rem;
 text-align: center; 
 margin: 26px;
 `
@@ -99,7 +100,7 @@ export const About = () => {
   return (
     <Main>
       <Section>
-        <Title>OM MIG, EMELIE THYRFALK</Title>
+        <Title>EMELIE THYRFALK</Title>
         <ProfilePicture src={profile} alt="profile picture"></ProfilePicture>
 
         <Article>

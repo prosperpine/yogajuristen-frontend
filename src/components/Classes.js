@@ -25,7 +25,6 @@ export const Classes = () => {
 
         <ThemeClasses />
       </Section>
-      <QnA />
     </main>
   )
 }
