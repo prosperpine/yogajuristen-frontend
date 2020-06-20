@@ -155,7 +155,7 @@ export const Contact = () => {
   return (
     <Main>
       <TextCard>
-        <Title>Kontakta mig</Title><Text>Kontakta mig gärna för mer information,frågor eller bokningar!</Text>
+        <Title>Kontakta mig</Title><Text>Kontakta mig gärna för mer information, frågor eller bokningar!</Text>
         <form id="contact-form" onSubmit={handleSubmit} method="POST">
           <div>
             <Input

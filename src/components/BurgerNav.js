@@ -59,7 +59,9 @@ export const BurgerNav = ({ open }) => {
       <StyledLink to='/Members'>
         <Page>Medlemmar</Page>
       </StyledLink>
-      <Page>Kontakta</Page>
+      <StyledLink to='/Contact'>
+        <Page>Kontakta</Page>
+      </StyledLink>
     </Menu>
   )
 }

@@ -89,7 +89,7 @@ export const MembersPage = () => {
   //   dispatch(getLoginMessage(userId, accessToken));
   // };
 
-  if (!accessToken) {
+  if (accessToken) {
     return (
       <Main><Section>
         <Title>Välkommen, {userName}!</Title>

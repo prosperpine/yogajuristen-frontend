@@ -14,6 +14,7 @@ import { About } from './components/About';
 import { Reviews } from './components/Reviews';
 import { Classes } from './components/Classes'
 import { Contact } from './components/Contact'
+import { Footer } from './components/Footer'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -72,6 +73,7 @@ export const App = () => {
               <Contact />
             </Route>
           </Switch>
+          <Footer />
         </BrowserRouter>
       </main>
     </Provider>
