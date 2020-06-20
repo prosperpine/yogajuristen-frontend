@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import stones from '../images/stones.jpg'
 import video from '../images/video.mp4'
+import pranayama from '../images/pranayama.mp4'
 
 import { useHistory } from 'react-router-dom';
 import {
@@ -59,14 +60,13 @@ margin: 26px;
 `
 const Video = styled.video`
 width: 80%;
+margin-bottom: 34px; 
 `
-
 
 const Subheading = styled.h2`
 font-family: 'Julius Sans One', sans-serif;
 color: #666d21;
 font-size: 2rem; 
-text-align: center; 
 margin: 30px;
 @media(min-width: 668px)and(max-width: 1024px) {
   padding: 0 30px; 
@@ -95,19 +95,23 @@ export const MembersPage = () => {
         <Title>Välkommen, {userName}!</Title>
         <Article>
           <TextCard>
-            <Subheading>Veckans video</Subheading>
-            <Video>
-              <source src={video} type="video/mp4"></source>
-  Your browser does not support the video tag.
-</Video>
+            <Subheading>Klass: Höftöppnare</Subheading>
+            <Video loop autoPlay>
+              <source src={video} type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            </Video>
+            <Subheading>Klass: Pranayama</Subheading>
+            <Video loop autoPlay>
+              <source src={pranayama} type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            </Video>
           </TextCard>
+
           <TextCard>
             <Subheading>Veckans frågor och tankar</Subheading>
             <QnA />
           </TextCard>
         </Article>
       </Section>
-      </Main>      // <div>
+      </Main >      // <div>
       //   {errorMessage && <h4>Error Message : {`${errorMessage}`}</h4>}
       //   {loginMessage && <h4>Secret Message : {`${loginMessage}`}</h4>}
       //   <p>You are logged in now, {userName}</p>

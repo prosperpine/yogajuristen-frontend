@@ -8,7 +8,8 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
 overflow-x: visible; 
-background-color: rgba(256,256,256,0.8);
+// background-color: rgba(256,256,256,0.8);
+background: white;
 border-radius: 16px;
 justify-content: center; 
 width: 80%;
@@ -28,11 +29,11 @@ flex-wrap: wrap;
 const ClassCard = styled.div`
 overflow-x: visible; 
 background-color: rgba(256,256,256,0.8);
-border-radius: 16px;
+border-radius: 6px;
 width: 80%;
 padding: 26px;
 margin: 20px 0;
-// box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 @media(min-width: 900px){  
   width: 46%;
   margin: 30px 24px; 
@@ -82,6 +83,15 @@ color: white;
   
 }
 `
+const Subheading = styled.h2`
+font-family: 'Julius Sans One', sans-serif;
+color: #666d21;
+font-size: 2rem; 
+margin-top: 26px; 
+@media(min-width: 668px)and(max-width: 1024px) {
+  
+}
+`
 
 
 
@@ -90,8 +100,7 @@ export const ThemeClasses = () => {
 
     <Wrapper>
       <ClassCard>
-        <h2>TEMAKLASSER</h2>
-        <Text>
+        <Subheading>TEMAKLASSER</Subheading>        <Text>
           Under hösten kommer jag att hålla
           temaklasser i Hathayoga en gång i månaden. Varje månad
           och klass har ett eget unikt tema.
