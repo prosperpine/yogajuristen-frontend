@@ -122,6 +122,8 @@ export const logout = () => {
     dispatch(user.actions.setErrorMessage({ errorMessage: null }));
     dispatch(user.actions.setAccessToken({ accessToken: null }));
     dispatch(user.actions.setUserId({ userId: 0 }));
+    dispatch(user.actions.setUserName({ userName: '' }));
+
     dispatch(user.actions.setLoggedoutMessage({ loggedoutMessage: true }));
   };
 };

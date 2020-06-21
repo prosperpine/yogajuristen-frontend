@@ -83,6 +83,10 @@ export const SignUp = () => {
             })
           );
           dispatch(user.actions.setUserId({ userId: json.userId }));
+          dispatch(
+            user.actions.setUserName({
+              userName: name
+            }))
         })
 
         .catch((err) => {
