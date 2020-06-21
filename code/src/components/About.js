@@ -114,8 +114,8 @@ export const About = () => {
         </TextCard>
           <Subheading>Min utbildning</Subheading>
           <TextCard>
-            Yogayama teacher training 200 h (hathayoga)
-            Utbildningen innehåller bland annat anatomi och skade-prevention, ayurveda och
+            Yogayama teacher training 200 h (hathayoga).
+            Utbildningen innehåller bland annat anatomi och skadeprevention, ayurveda och
             kost (läran om livet), forskning kring yoga och dess effekter, hathayogans filosofi,
             andning och andingstekniker (pranayama), meditation mm.
             Utöver min yogalärarutbildning har jag genomfört diverse
@@ -135,7 +135,7 @@ utbildningar inom ledarskap, kommunikation och pedagogik.</TextCard>
           positioner, perfektionism, prestationshets osv. Det kändes
           motsägelsefullt och allt annat än sinnesstillande. Det var först
           genom mötet med yinyogan som min uppfattning om yogan
-          skiftade. Under min första föräldraledighet fick jag djupare
+          skiftade. <br /> <br />Under min första föräldraledighet fick jag djupare
           kontakt med min längtan efter inre frid och en seriös önskan om
           att göra något meningsfullt med livet. När jag kom bort från
           samhällets brus efter födseln av min dotter bestämde jag mig för
