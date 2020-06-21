@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.34de6062.chunk.css",
+    "main.js": "/static/js/main.da5227f6.chunk.js",
+    "main.js.map": "/static/js/main.da5227f6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.1b4414a0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.1b4414a0.js.map",
+    "static/css/2.19b7558e.chunk.css": "/static/css/2.19b7558e.chunk.css",
+    "static/js/2.e64db528.chunk.js": "/static/js/2.e64db528.chunk.js",
+    "static/js/2.e64db528.chunk.js.map": "/static/js/2.e64db528.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.6d011186bd93595aef4d23ebac02a728.js": "/precache-manifest.6d011186bd93595aef4d23ebac02a728.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.19b7558e.chunk.css.map": "/static/css/2.19b7558e.chunk.css.map",
+    "static/css/main.34de6062.chunk.css.map": "/static/css/main.34de6062.chunk.css.map",
+    "static/js/2.e64db528.chunk.js.LICENSE.txt": "/static/js/2.e64db528.chunk.js.LICENSE.txt",
+    "static/media/RYT.png": "/static/media/RYT.50ac7db7.png",
+    "static/media/lake.jpg": "/static/media/lake.fa95d717.jpg",
+    "static/media/mountains.jpg": "/static/media/mountains.bab68175.jpg",
+    "static/media/pranayama.mp4": "/static/media/pranayama.6253097a.mp4",
+    "static/media/stones.jpg": "/static/media/stones.6ef118a2.jpg",
+    "static/media/video.mp4": "/static/media/video.ab0387b4.mp4",
+    "static/media/warrior.jpg": "/static/media/warrior.26e2e061.jpg",
+    "static/media/yogamat.jpg": "/static/media/yogamat.db0fe470.jpg",
+    "static/media/yogayama.png": "/static/media/yogayama.189740ed.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1b4414a0.js",
+    "static/css/2.19b7558e.chunk.css",
+    "static/js/2.e64db528.chunk.js",
+    "static/css/main.34de6062.chunk.css",
+    "static/js/main.da5227f6.chunk.js"
+  ]
+}
