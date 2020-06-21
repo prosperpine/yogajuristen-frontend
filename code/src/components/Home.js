@@ -18,7 +18,7 @@ const HeroImage = styled.div`
 
 const HeroText = styled.div`
   text-align: center;
-  margin-top: 100px;
+  padding-top: 100px;
   @media(min-width: 668px){
     position: absolute;
     left: 70px;
