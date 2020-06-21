@@ -8,8 +8,8 @@ import mountains from '../images/mountains.jpg';
 
 
 const Cards = styled.section`
+
   display: flex; 
-  height: 100vh; 
   align-items: center; 
   flex-direction: column;
   color: #5e5e5e; 
@@ -19,7 +19,6 @@ const Cards = styled.section`
  
 `
 const LogInCard = styled.div`
-overflow-x: visible; 
 display: flex;
 flex-direction: column; 
  align-items: center;
@@ -43,7 +42,6 @@ display: flex;
  align-items: center;
 flex-direction: column; 
 justify-content: space-between;
-overflow-x: visible; 
 background-color: rgba(0,0,0,0.4);
 width: 70%;
 border-radius: 16px;
@@ -172,7 +170,7 @@ export const LogIn = () => {
 
 
 
-        {loggedoutMessage && <h4>you are now logged out!</h4>}
+        {/* {loggedoutMessage && <h4>you are now logged out!</h4>} */}
       </section>
     );
   } else {

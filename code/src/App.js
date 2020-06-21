@@ -21,7 +21,6 @@ const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
   margin: 0;
-  overflow-x: hidden;
   
 
 }
@@ -29,12 +28,13 @@ const GlobalStyle = createGlobalStyle`
 body {
   padding: 0;
   margin: 0;
+  // overflow-x: hidden;
+
  
   
  
 }
 `
-
 
 const reducer = combineReducers({ user: user.reducer });
 
