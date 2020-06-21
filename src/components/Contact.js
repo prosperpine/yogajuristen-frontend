@@ -44,9 +44,20 @@ margin: 20px 0;
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 @media(min-width: 900px){  
   margin: 30px 24px; 
+  width: 60%;
 }
 
 `
+
+const Article = styled.div`
+display: flex; 
+flex-direction: column; 
+@media(min-width: 900px){
+  flex-direction: row; 
+}
+
+`
+
 
 const Text = styled.p`
 font-size: 1.2rem;
@@ -123,7 +134,8 @@ export const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    fetch('http://localhost:9001/contact', {
+    // fetch('http://localhost:9001/contact', {
+    fetch('https://yogajuristen.herokuapp.com/contact', {
       method: "POST",
       body: JSON.stringify({ name, email, message }),
       headers: {
@@ -156,39 +168,40 @@ export const Contact = () => {
     <Main>
       <TextCard>
         <Title>Kontakta mig</Title><Text>Kontakta mig gärna för mer information, frågor eller bokningar!</Text>
-        <form id="contact-form" onSubmit={handleSubmit} method="POST">
-          <div>
-            <Input
-              required
-              value={name}
-              placeholder='Ditt namn'
-              onChange={(event) => setName(event.target.value)}
-              type="text" />
-          </div>
-          <div>
-            <Input
-              required
-              value={email}
-              placeholder='Din email'
-              onChange={(event) => setEmail(event.target.value)}
-              type="email" />
-          </div>
-          <div>
-            <Textarea
-              required
-              type="textarea"
-              value={message}
-              placeholder='Meddelande'
-              onChange={(event) => setMessage(event.target.value)}
-            ></Textarea>
-          </div>
-          <Button type="submit">Skicka</Button>
-        </form>
-        <Details><Text><Icon icon={faEnvelope}></Icon> emelie@yogajuristen.se</Text>
-          <Text><Icon icon={faPhone}></Icon> 070-5881482</Text>
-          <div><a href="https://www.linkedin.com/in/emeliethyrfalk/"><i class="fab fa-linkedin-in" style={{ fontSize: '2rem', color: '#666d21', marginRight: '1rem' }}  ></i></a>
-            <a href="https://www.facebook.com/Yogajuristen"><i class="fab fa-facebook-square" style={{ fontSize: '2rem', color: '#666d21' }}></i></a></div>
-        </Details>
+        <Article>
+          <form id="contact-form" onSubmit={handleSubmit} method="POST">
+            <div>
+              <Input
+                required
+                value={name}
+                placeholder='Ditt namn'
+                onChange={(event) => setName(event.target.value)}
+                type="text" />
+            </div>
+            <div>
+              <Input
+                required
+                value={email}
+                placeholder='Din email'
+                onChange={(event) => setEmail(event.target.value)}
+                type="email" />
+            </div>
+            <div>
+              <Textarea
+                required
+                type="textarea"
+                value={message}
+                placeholder='Meddelande'
+                onChange={(event) => setMessage(event.target.value)}
+              ></Textarea>
+            </div>
+            <Button type="submit">Skicka</Button>
+          </form>
+          <Details><Text><Icon icon={faEnvelope}></Icon> emelie@yogajuristen.se</Text>
+            <Text><Icon icon={faPhone}></Icon> 070-5881482</Text>
+            <div><a href="https://www.linkedin.com/in/emeliethyrfalk/"><i class="fab fa-linkedin-in" style={{ fontSize: '2rem', color: '#666d21', marginRight: '1rem' }}  ></i></a>
+              <a href="https://www.facebook.com/Yogajuristen"><i class="fab fa-facebook-square" style={{ fontSize: '2rem', color: '#666d21' }}></i></a></div>
+          </Details></Article>
       </TextCard>
     </Main >
   )

@@ -77,7 +77,8 @@ export const ReviewInput = ({ setReviews }) => {
   const handleReviewSubmit = (event) => {
     event.preventDefault();
 
-    fetch('http://localhost:9001/reviews', {
+    // fetch('http://localhost:9001/reviews', {
+    fetch('https://yogajuristen.herokuapp.com/reviews', {
       method: 'POST',
       headers: {
         Authorization: accessToken,

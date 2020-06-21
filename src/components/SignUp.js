@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { user, login } from '../reducers/user';
 
-const URL = 'http://localhost:9001/users';
+// const URL = 'http://localhost:9001/users'
+const URL = 'https://yogajuristen.herokuapp.com/users'
+
 
 const Input = styled.input`
   padding: 0.5em;

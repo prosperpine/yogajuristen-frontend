@@ -41,7 +41,9 @@ export const Reviews = () => {
   const moment = require('moment');
 
   useEffect(() => {
-    fetch('http://localhost:9001/reviews')
+    // fetch('http://localhost:9001/reviews')
+    fetch('https://yogajuristen.herokuapp.com/reviews')
+
       .then((res) => res.json())
       .then((json) => setReviews(json));
   }, []);
