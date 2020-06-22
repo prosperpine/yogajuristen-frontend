@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { Navigation } from './Navigation.js';
-import { LogIn } from './LogIn.js';
 
 const Section = styled.main`
   font-family: 'Julius Sans One',sans-serif;
@@ -10,8 +8,6 @@ const Section = styled.main`
   margin-top: 0;
   overflow-hidden: visible;
 `;
-
-
 
 const Title = styled.h1`
   margin: 0;
@@ -21,12 +17,12 @@ const Title = styled.h1`
   text-align: center;
   padding-top: 60px;
   padding-bottom: 20px;
-  @media (min-width: 667px) and (max-width: 1024px){
-    font-size: 3.8rem;
-  }
-  @media (min-width: 1025px) {
-    font-size: 5rem;
-  }
+    @media (min-width: 667px) and (max-width: 1024px){
+      font-size: 3.8rem;
+    }
+    @media (min-width: 1025px) {
+      font-size: 5rem;
+    }
 `;
 
 export const Header = () => {

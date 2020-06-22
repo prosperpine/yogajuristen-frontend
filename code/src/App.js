@@ -5,10 +5,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { MembersPage } from 'components/MembersPage';
 import { user } from './reducers/user';
-
 import { Header } from './components/Header';
 import { Home } from './components/Home';
-import { MembersLogin } from './components/MembersLogin';
+//import { MembersLogin } from './components/MembersLogin';
+import { LogIn } from './components/LogIn'
 import { SignUp } from './components/SignUp';
 import { About } from './components/About';
 import { Reviews } from './components/Reviews';
@@ -20,19 +20,12 @@ import { Footer } from './components/Footer'
 const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
-  margin: 0;
-  
-
+  margin: 0; 
 }
 
 body {
   padding: 0;
-  margin: 0;
-  // overflow-x: hidden;
-
- 
-  
- 
+  margin: 0;  
 }
 `
 
@@ -61,7 +54,7 @@ export const App = () => {
               <Reviews />
             </Route>
             <Route exact path='/LogIn'>
-              <MembersLogin />
+              <LogIn />
             </Route>
             <Route exact path='/Signup'>
               <SignUp />

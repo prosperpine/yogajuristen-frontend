@@ -37,28 +37,20 @@ const Reviewer = styled.h4`
 
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
-
   const moment = require('moment');
 
   useEffect(() => {
-    // fetch('http://localhost:9001/reviews')
     fetch('https://yogajuristen.herokuapp.com/reviews')
-
       .then((res) => res.json())
       .then((json) => setReviews(json));
   }, []);
 
   return (
     <Section>
-      <ReviewInput
-        // userReview={userReview}
-        // setUserReview={setUserReview}
-        setReviews={setReviews}
-      />
+      <ReviewInput setReviews={setReviews} />
       {reviews.map((review) => (
         <RecentReviews>
           <ReviewCard key={review._id}>
-            {' '}
             <Review>"{`${review.message}`}"</Review>
             <Reviewer> - {review.reviewer}, {moment(review.createdAt).format('YYYY-MM-DD')} </Reviewer>
           </ReviewCard>

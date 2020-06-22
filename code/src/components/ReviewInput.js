@@ -25,13 +25,20 @@ const Text = styled.h2`
 `
 
 const Textarea = styled.textarea`
+  font-family: Arial;
+  padding: 0.5em;
+  font-size: 1rem; 
+  color:  darkblue;
+  border: none;
   height: 100px; 
   border-radius: 10px;
     @media(min-width:668px) and (max-width:1024px){
       height: 150px; 
+      font-size: 1.2rem;
     }
     @media(min-width: 1024px){
       height: 175px; 
+      font-size: 1.2rem;
     }
 `
 
@@ -40,9 +47,9 @@ const StyledLink = styled(Link)`
   font-style: italic; 
   font-size: 1.4rem;
   text-decoration: none;
-    &:hover {
-      color: darkgrey;
-  
+  &:hover {
+    color: darkgrey;
+  }
 `
 
 const ButtonContainer = styled.div`
@@ -77,20 +84,18 @@ export const ReviewInput = ({ setReviews }) => {
   const handleReviewSubmit = (event) => {
     event.preventDefault();
 
-    // fetch('http://localhost:9001/reviews', {
     fetch('https://yogajuristen.herokuapp.com/reviews', {
       method: 'POST',
       headers: {
         Authorization: accessToken,
         'Content-Type': 'application/json',
       },
-
       body: JSON.stringify({ message: userReview, reviewer: userName })
     })
       .then((res) => res.json())
       .then((newReview) => {
         setReviews((previousReviews) => [newReview, ...previousReviews]);
-        setUserReview(''); // will empty the textarea when the form is submitted
+        setUserReview('');
       });
   };
   return (
@@ -102,11 +107,10 @@ export const ReviewInput = ({ setReviews }) => {
             onChange={(event) => setUserReview(event.target.value)}
             value={userReview}
           />
-          <ButtonContainer> {accessToken ? (<Button
-            type='submit'
-          >
-            + </Button>
-          ) : (<StyledLink to="/LogIn">Logga in först > </StyledLink>)}
+          <ButtonContainer>
+            {accessToken ?
+              (<Button type='submit'>+ </Button>)
+              : (<StyledLink to="/LogIn">Logga in först > </StyledLink>)}
           </ButtonContainer>
         </Form>
       </Input>
