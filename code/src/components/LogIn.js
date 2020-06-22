@@ -83,6 +83,7 @@ const Button = styled.button`
   background: #ebedf9;
   border: lightgrey;
   border-radius: 10px;
+  margin: 16px;
   &:hover {
     background: #b4bb72;
     color: white; 

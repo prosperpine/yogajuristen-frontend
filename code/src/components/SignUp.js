@@ -27,6 +27,7 @@ const Button = styled.button`
   color:  grey; 
   background: #ebedf9; 
   border-radius: 10px;
+  margin: 16px;
   &:hover {
     background: #b4bb72;
     color: white;  
@@ -113,7 +114,6 @@ export const SignUp = () => {
         <Button type='submit'>Registrera</Button>
         {errorMessage && <Error>{errorMessage}</Error>}
       </form>
-      )}
     </section>
   );
 };
