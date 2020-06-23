@@ -15,9 +15,9 @@ const HeroImage = styled.div`
 const HeroText = styled.div`
   text-align: center;
   padding-top: 100px;
-    @media(min-width: 668px){
+    @media(min-width: 1024px){
       position: absolute;
-      left: 70px;
+      left: 225px;
     }
 `
 
