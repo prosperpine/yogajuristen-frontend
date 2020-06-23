@@ -109,7 +109,6 @@ export const Contact = () => {
   const [email, setEmail] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
-    // fetch('http://localhost:9001/contact', {
     fetch('https://yogajuristen.herokuapp.com/contact', {
       method: "POST",
       body: JSON.stringify({ name, email, message }),

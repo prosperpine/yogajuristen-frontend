@@ -104,7 +104,7 @@ export const ThemeClasses = () => {
         <Text><span style={{ fontWeight: "bold" }}>Pris: </span> 290 kr/gång eller 1120 kr för samtliga</Text>
         <Text><span style={{ fontWeight: "bold" }}>Förkunskaper: </span> Inga.</Text>
       </ClassCard>
-      <Button href="https://www.timecenter.se/yogaheart/boka/">Boka</Button>
+      <Button href="https://www.timecenter.se/yogaheart/boka/" target="_blank" rel="noopener noreferrer">Boka</Button>
     </Wrapper>
   )
 }
