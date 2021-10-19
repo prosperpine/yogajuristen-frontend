@@ -6,3 +6,6 @@ The technologies I used: Javascript, React, Styled Components.
 For the backend I used; Node.js, Express. 
 
 See the backend repo here: https://github.com/prosperpine/yogajuristen-backend
+
+Demo deployed https://laughing-yalow-803ae6.netlify.app
+
